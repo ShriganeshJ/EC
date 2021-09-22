@@ -1,0 +1,81 @@
+Eager Initialization::
+
+In eager initialization, the instance of Singleton Class is created at the time of class loading.
+This is the easiest method to create a Singleton class, but it has the drawback of the instance 
+being created even though client application might not be using it.
+__________________________________________________________________________________________________
+
+Static Block Initialization::
+
+ Static block initialization is similar to eager initialization, except that the
+ instance of the class is created in the static block that provides the option
+ for exception handling.
+ 
+ _________________________________________________________________________________________________
+ Lazy Initialization::
+ 
+ Lazy initialization is a method to implement the Singleton pattern to create an 
+ instance in the global access method.
+ ________________________________________________________________________________________________
+ 
+ 
+ Thread-Safe Singletons::
+ 
+ The easier way to create a thread-safe singleton class is to make the global
+  access method synchronized so that only one thread can execute this method at a time.
+  
+___________________________________________________________________________________________________
+
+Double-Checked Locking ::
+ To avoid this extra overhead every time (synchronized in Thread safe single tone),
+ the double-checked locking principle is used.
+ In this approach, the synchronized block is used inside the if condition with an additional check
+ to ensure that only one instance of the singleton class is created.
+ 
+ 
+ public static ThreadSafeSingleton getInstanceUsingDoubleLocking(){
+    if(instance == null){
+        synchronized (ThreadSafeSingleton.class) {
+            if(instance == null){
+                instance = new ThreadSafeSingleton();
+            }
+        }
+    }
+    return instance;
+}
+
+
+_________________________________________________________________________________________________
+
+Bill Pugh Solution::
+
+Bill Pugh was the main force behind Java memory model changes
+It suggests using a static inner class. Notice the private inner static class
+ that contains the instance of the singleton class
+ 
+ When the singleton class is loaded, the SingletonHelper class is not loaded into memory, 
+and only when someone calls the getInstance method, does this class get loaded and create
+the Singleton class instance. 
+
+________________________________________________________________________________________________
+
+Enum Singleton::
+
+To overcome this situation with Reflection, Joshua Bloch suggests the use of Enum to
+ implement the Singleton design pattern,as Java ensures that any enum value is instantiated
+ only once in a Java program.
+ 
+ The drawback is that the enum type is somewhat inflexible; for example,
+  it does not allow lazy initialization.
+ 
+ _______________________________________________________________________________________________
+ 
+ 
+
+
+ 
+  
+  
+  
+  
+  
