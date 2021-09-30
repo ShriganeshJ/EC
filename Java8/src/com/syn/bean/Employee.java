@@ -3,6 +3,11 @@ package com.syn.bean;
 public class Employee {
 	
 	private String empName;
+	@Override
+	public String toString() {
+		return "Employee [empName=" + empName + ", sal=" + sal + ", designation=" + designation + ", empId=" + empId
+				+ "]";
+	}
 	private int sal;
 	private String designation;
 	private long empId;

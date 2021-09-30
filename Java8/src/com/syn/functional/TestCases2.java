@@ -65,11 +65,26 @@ interface Parent4
 {
 	public void p();
 }
-//@FunctionalInterface
+@FunctionalInterface
 interface Child4 extends Parent4
 {
 	
-	public void p2();
+	//public void p1();
 }
 
 ///***************||**********************
+
+
+interface Parent5
+{
+	public void p();
+	//public void p2();
+}
+@FunctionalInterface
+interface Child5 extends Parent5
+{
+	
+	//public void p1();
+}
+
+
