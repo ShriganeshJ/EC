@@ -3,6 +3,8 @@ package com.syn.time;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.Period;
+import java.time.Year;
+import java.util.Scanner;
 
 public class DateAPITest04 {
 	
@@ -12,7 +14,8 @@ public static void main(String[] args) {
 	LocalDate birthDate = LocalDate.of(1995,Month.FEBRUARY,12);
 			
 			
-	
+	//Period Class 
+	//use case calculate age 
 	Period p = Period.between(birthDate,tody);
 	
 	System.out.println("Age Period in Years "+p.getYears());
@@ -27,6 +30,18 @@ public static void main(String[] args) {
 	System.out.println("Present In Earth "+p1.getYears());
 	System.out.println("Present In Earth months "+p1.getMonths());
 	System.out.println("Present In Earth Day "+p1.getDays());
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
 
